@@ -1,73 +1,69 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
-import { Link } from "react-router-dom";
 import styles from "./Footer.module.scss";
 
 const Footer = () => {
   return (
-    <div className={styles.footer_container}>
-      <div className={styles.grid_container}>
+    <div className={styles.container}>
+      <div className={styles.grid}>
         <div className={styles.col1}>
-          <p style={{ fontWeight: 500, color: "black" }}>Quick Links</p>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              fontSize: ".8rem",
-              justifyContent: "center",
-              textAlign: "center",
-              gap: "1rem",
-            }}
-          >
-            <Link className="linkss" to="/ResourceHub">
-              Resource Hub
-            </Link>
-            <a href="#about_us" className="linkss">
-              Message
-            </a>
-            <a href="#annual" className="linkss">
-              Annual Attractions
-            </a>
+          <h3 style={{ fontWeight: 500, color: "white", marginBottom: "1rem" }}>
+            Contact
+          </h3>
+
+          <div className={styles.sec}>
+            <i className="fa-brands fa-facebook"></i>
+            <a href="https://facebook.com">Facebook</a>
+          </div>
+
+          <div className={styles.sec}>
+            <i className="fa-brands fa-instagram"></i>
+            <a href="https://instagram.com">InstaGram</a>
+          </div>
+
+          <div className={styles.sec}>
+            <i className="fa-brands fa-linkedin"></i>
+            <a href="https://linkedin.com">LinkedIn</a>
+          </div>
+
+          <div className={styles.sec}>
+            <i className="fa-brands fa-github"></i>
+            <a href="https://github.com">GitHub</a>
           </div>
         </div>
-        <div className="col2">
-          <p style={{ fontWeight: 500, color: "black" }}>Contact Us</p>
-          <div className="emailFooter">
-            <p style={{ color: "white" }}>Email:- </p>
-            <a
-              href="mailto:ecs.nitsilchar2023@gmail.com"
-              style={{ color: "white", fontSize: "16px" }}
-            >
-              ecs.nitsilchar2023@gmail.com
-            </a>
-          </div>
+
+        <div className={styles.col2}>
+          <h3 style={{ color: "white" }}>Logo</h3>
         </div>
-        <div className="col3">
-          <p style={{ fontWeight: 500, color: "black" }}>Quick Links</p>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              fontSize: ".8rem",
-              justifyContent: "center",
-              textAlign: "center",
-              gap: "1rem",
-            }}
-          >
-            <Link to="/" className="linkss">
-              Home
-            </Link>
-            <Link className="linkss" to="/Member">
-              Members
-            </Link>
-            <Link className="linkss" to="/Gallery">
-              Gallery
-            </Link>
+
+        <div className={styles.col3}>
+          <h3 style={{ fontWeight: 500, color: "white", marginBottom: "1rem" }}>
+            Contact
+          </h3>
+
+          <div className={styles.sec}>
+            <i className="fa-brands fa-facebook"></i>
+            <a href="https://facebook.com">Facebook</a>
+          </div>
+
+          <div className={styles.sec}>
+            <i className="fa-brands fa-instagram"></i>
+            <a href="#">InstaGram</a>
+          </div>
+
+          <div className={styles.sec}>
+            <i className="fa-brands fa-linkedin"></i>
+            <a href="#">LinkedIn</a>
+          </div>
+
+          <div className={styles.sec}>
+            <i className="fa-brands fa-github"></i>
+            <a href="#">GitHub</a>
           </div>
         </div>
       </div>
-      <div className="copyright">
-        <p>© Copyright 2022 All rights reserved</p>
-        <p>ECS NIT Silchar</p>
+      <div className="footer">
+        <p style={{ color: "white" }}>© Copyright 2023 All rights reserved</p>
       </div>
     </div>
   );
