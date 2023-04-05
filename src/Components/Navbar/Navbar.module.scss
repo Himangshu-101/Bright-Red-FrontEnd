@@ -22,14 +22,14 @@
     align-items: center;
 
     button {
-      font-size: 1rem;
       padding: 0.3rem 2rem;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       border-radius: 3rem;
       outline: none;
       border: none;
       margin-right: 1rem;
       transition: ease-in-out 0.8s;
+      cursor: pointer;
     }
     button:hover {
       transform: scale(1.1);
@@ -41,13 +41,28 @@
       font-size: 2rem;
       color: rgb(43, 10, 62);
       transition: ease-in-out 0.8s;
+      cursor: pointer;
     }
     i:hover {
       transform: scale(1.2);
     }
   }
-  @media screen and (max-width: 750px) {
+}
+
+@media screen and (max-width: 1050px) {
+  .navbar {
     .title {
+      margin-left: 2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .navbar {
+    height: 4rem;
+
+    .title {
+      margin-left: 2rem;
       font-size: 2rem;
     }
     .right button {
@@ -58,6 +73,17 @@
     .right i {
       font-size: 1.6rem;
       margin: 0.2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .navbar {
+    .title {
+      margin-left: 0.8rem;
+    }
+    .right {
+      margin-right: 0rem;
     }
   }
 }
