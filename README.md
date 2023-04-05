@@ -1,10 +1,10 @@
-# React-JS-App Template v1.0.0
-GDSC NIT Silchar's Template for a JS + React + SASS app.
+# Bright Reds Web App FrontEnd
+A modern day solution to the world's problem of garbage.
 
 ## Features, Tools and Technologies
 - JavaScript
-- React 18
-- React Router 6
+- React
+- React Router
 - SASS Modules
 - Vite
 - pnpm
