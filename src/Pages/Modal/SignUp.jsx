@@ -68,36 +68,66 @@ const SignUp = (props) => {
       <div className={styles.innerBox}>
         <h1 className={styles.heading}>Signup</h1>
 
-        <InputControl
-          label="Name"
-          placeholder="Enter your name"
-          onChange={(event) =>
-            setValues((prev) => ({ ...prev, name: event.target.value }))
-          }
-          type="text"
-        />
-        <InputControl
-          label="Email"
-          placeholder="Enter email address"
-          onChange={(event) =>
-            setValues((prev) => ({ ...prev, email: event.target.value }))
-          }
-          type="email"
-        />
-        <InputControl
-          label="Password"
-          placeholder="Enter password"
-          onChange={(event) =>
-            setValues((prev) => ({ ...prev, pass: event.target.value }))
-          }
-          type={show !== "show" ? "text" : "password"}
-        />
+        <div className={styles.fields}>
+          <div className={styles.fieldsChild}>
+            <InputControl
+              label="Name"
+              placeholder="Enter your name"
+              onChange={(event) =>
+                setValues((prev) => ({ ...prev, name: event.target.value }))
+              }
+              type="text"
+            />
+            <InputControl
+              label="Email"
+              placeholder="Enter email address"
+              onChange={(event) =>
+                setValues((prev) => ({ ...prev, email: event.target.value }))
+              }
+              type="email"
+            />
+            <InputControl
+              label="Password"
+              placeholder="Enter password"
+              onChange={(event) =>
+                setValues((prev) => ({ ...prev, pass: event.target.value }))
+              }
+              type={show !== "show" ? "text" : "password"}
+            />
+          </div>
+          <div className={styles.fieldsChild}>
+            <InputControl
+              label="Location"
+              placeholder="Enter Location"
+              onChange={(event) =>
+                setValues((prev) => ({ ...prev, loc: event.target.value }))
+              }
+              type={show !== "show" ? "text" : "password"}
+            />
+            <InputControl
+              label="Company Name"
+              placeholder="Enter your company name"
+              onChange={(event) =>
+                setValues((prev) => ({ ...prev, ComName: event.target.value }))
+              }
+              type={show !== "show" ? "text" : "password"}
+            />
+            <InputControl
+              label="Designation"
+              placeholder="Enter your Designation"
+              onChange={(event) =>
+                setValues((prev) => ({ ...prev, Desig: event.target.value }))
+              }
+              type={show !== "show" ? "text" : "password"}
+            />
+          </div>
+        </div>
         {values.pass.length > 1 && (
           <p
             onClick={() => setShow(show === "show" ? "Hide" : "show")}
             style={{
               position: "absolute",
-              top: "60%",
+              top: "41%",
               fontSize: "14px",
               textDecoration: "underline",
               cursor: "pointer",
