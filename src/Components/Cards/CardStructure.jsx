@@ -10,45 +10,33 @@ const CardStructure = (data) => {
       <div className={styles.container}>
         <ul>
           <li>
-            <b className={styles.comp}>Company: </b>
-          </li>
-          <li>
-            <p>{data.compName}</p>
+            <b className={styles.name}>Name: {data.name}</b>
           </li>
         </ul>
         <ul>
           <li>
-            <b className={styles.name}>Name: </b>
-          </li>
-          <li>
-            <p>{data.name}</p>
+            <b className={styles.comp}>Company: {data.compName}</b>
           </li>
         </ul>
         <ul>
           <li>
-            <b className={styles.loc}>Location: </b>
-          </li>
-          <li>
-            <p>{data.location}</p>
+            <b className={styles.loc}>Location: {data.location}</b>
           </li>
         </ul>
         <ul>
           <li>
-            <b className={styles.price}>Price: </b>
-          </li>
-          <li>
-            <p>{data.price}</p>
+            <b className={styles.price}>Price: {data.price}</b>
           </li>
         </ul>
         <ul>
           {/* <li><b className={styles.loc}>Details: </b></li> */}
-          <li>
+          {/* <li>
             <p>{data.details}</p>
-          </li>
+          </li> */}
         </ul>
         <ul>
           <li className={styles.butt}>
-            <Link className={styles.button1} to="/">
+            <Link className={styles.button} to="/">
               Show More
             </Link>
           </li>

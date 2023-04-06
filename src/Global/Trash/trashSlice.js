@@ -52,6 +52,19 @@ export const getTrash = createAsyncThunk("trash/getAll", async (thunkAPI) => {
     return thunkAPI.rejectWithValue(message);
   }
 });
+// search trash
+export const searchTrash = createAsyncThunk("trash/search", async (data, thunkAPI) => {
+  try {
+    return await trashService.searchTrash(data);
+  } catch (error) {
+    const message =
+      (error.response && error.response.data && error.response.data.message) ||
+      error.message ||
+      error.toString();
+    return thunkAPI.rejectWithValue(message);
+  }
+});
+
 export const trashSlice = createSlice({
   name: "trash",
   initialState,

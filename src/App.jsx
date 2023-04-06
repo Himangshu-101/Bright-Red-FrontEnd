@@ -1,18 +1,20 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import { Home, Error, Profile } from "./Pages";
+import { useSelector } from "react-redux";
+import { Home, Profile } from "./Pages";
 import "react-toastify/dist/ReactToastify.css";
 import { Navbar, Footer } from "./Components";
 
 const App = () => {
+  const { user } = useSelector((state) => state.auth);
   return (
     <>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile" element={user ? <Profile /> : <Navigate to="/" />} />
         {/* <Route path="/posts/: id" element={<PostDetails />} /> */}
-        <Route path="*" element={<Error />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
       <Footer />
       <ToastContainer />

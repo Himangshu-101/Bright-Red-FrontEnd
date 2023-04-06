@@ -26,5 +26,10 @@ const getTrash = async () => {
   const response = await axios.get(API_URL);
   return response.data;
 };
-const trashService = { createTrash, getTrash, deleteTrash };
+/// search Trashhh
+const searchTrash = async () => {
+  const response = await axios.get(`${API_URL}search`);
+  return response.data;
+};
+const trashService = { createTrash, getTrash, deleteTrash, searchTrash };
 export default trashService;
