@@ -1,8 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
 :root {
   --gdsc-font-1: "Poppins", sans-serif;
+  --font-family: "Manrope", sans-serif;
 
+  --gradient-text: linear-gradient(89.97deg, #ae67fa 1.84%, #f49867 102.67%);
+  --gradient-bar: linear-gradient(103.22deg, #ae67fa -13.86%, #f49867 99.55%);
   --gdsc-blue-1-100: #4885ed;
   --gdsc-blue-2-100: #4285f4;
   --gdsc-blue-3-100: #547dbf;
