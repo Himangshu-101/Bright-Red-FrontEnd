@@ -1,5 +1,6 @@
 import Button from "./Button/Button";
 import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer/Footer";
-
-export { Button, Navbar, Footer };
+import Login from "./Modal/Login";
+import SignUp from "./Modal/SignUp";
+export { Button, Navbar, Footer, Login, SignUp };
