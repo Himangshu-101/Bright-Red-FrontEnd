@@ -1,12 +1,12 @@
 import { Routes, Route } from "react-router-dom";
-
+import { ToastContainer } from "react-toastify";
 import { Home, Error, Profile, Details } from "./Pages";
-
+import "react-toastify/dist/ReactToastify.css";
 import { Navbar, Footer } from "./Components";
 
 const App = () => {
   return (
-    <div>
+    <>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -16,7 +16,8 @@ const App = () => {
         <Route path="/details" element={<Details />} />
       </Routes>
       <Footer />
-    </div>
+      <ToastContainer />
+    </>
   );
 };
 

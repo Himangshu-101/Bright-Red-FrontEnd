@@ -1,3 +1,9 @@
+.main {
+  h1 {
+    text-align: center;
+    font-size: 3rem;
+  }
+}
 .details {
   display: flex;
   justify-content: space-between;
@@ -6,6 +12,7 @@
     padding: 0 2rem;
     width: 50%;
     .first {
+      padding-left: 1.2rem;
       .tags {
         display: flex;
         align-items: center;
@@ -20,7 +27,7 @@
           font-family: var(--font-family);
           font-weight: 500;
           font-style: normal;
-          font-size: 1rem;
+          font-size: 1.5rem;
           margin-left: 1rem;
           color: var(--color-text);
         }
@@ -35,7 +42,7 @@
         border-radius: 1.5rem;
 
         p {
-          font-size: 1.15rem;
+          font-size: 1.3rem;
         }
       }
     }
@@ -73,6 +80,14 @@
 
     .left {
       padding: 0 1.5rem;
+
+      .first {
+        .tags {
+          p {
+            font-size: 1.3rem;
+          }
+        }
+      }
     }
     .right {
       img {
@@ -100,41 +115,49 @@
   }
 }
 @media (max-width: 800px) {
-  .details {
-    padding: 2rem 1rem;
-    // width: 80%;
-    // margin: auto;
-    // justify-content: center;
-    // align-items: center;
-    .left {
-      padding: 0;
-      width: 100%;
-      justify-content: flex-start;
-      .first {
-        .tags {
-          h1 {
-            font-size: 1.4rem;
-            letter-spacing: -0.04;
-          }
-          p {
-            font-size: 1rem;
-          }
-        }
-      }
-      .second {
-        .desc {
-          p {
-            font-size: 1rem;
-          }
-        }
-      }
+  .main {
+    h1 {
+      font-size: 2rem;
     }
-    .right {
-      align-items: center;
-      justify-content: center;
-      img {
-        width: 15rem;
-        height: 10rem;
+
+    .details {
+      padding: 2rem 1rem;
+      .left {
+        padding: 0;
+        width: 100%;
+        justify-content: flex-start;
+        .first {
+          .tags {
+            h1 {
+              font-size: 1.4rem;
+              letter-spacing: -0.04;
+            }
+            p {
+              font-size: 1rem;
+            }
+          }
+        }
+        .second {
+          .desc {
+            h2 {
+              font-size: 1.3rem;
+            }
+            p {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+      .right {
+        align-items: center;
+        justify-content: center;
+        img {
+          width: 15rem;
+          height: 10rem;
+        }
+        h2 {
+          font-size: 1.2rem;
+        }
       }
     }
   }
