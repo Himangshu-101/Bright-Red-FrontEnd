@@ -185,7 +185,13 @@
 @media screen and (max-width: 600px) {
   .header {
     p {
-      font-size: 2.2rem !important;
+      font-size: 2.3rem !important;
+
+      &::after {
+        content: "";
+        width: 9rem !important;
+        height: 2px !important;
+      }
     }
   }
 

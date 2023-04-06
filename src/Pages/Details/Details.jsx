@@ -10,7 +10,7 @@ const Details = () => {
   };
   return (
     <div className={styles.main}>
-      <h1>Details Section</h1>
+      <h1 className={styles.header}>Details Section</h1>
       <div className={styles.details}>
         <div className={styles.left}>
           <div className={styles.first}>
@@ -48,7 +48,7 @@ const Details = () => {
         </div>
 
         <div className={styles.right}>
-          <img src={image} alt="" />
+          <img src={image} alt="Product" />
           <h2>Waste Managemant</h2>
         </div>
       </div>
