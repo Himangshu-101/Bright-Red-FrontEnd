@@ -45,19 +45,21 @@
 .wrapper2 {
   padding-top: 5rem;
   padding-bottom: 5rem;
-  margin-inline: 12rem;
+  margin-inline: 8rem;
 
   .wrapper2_box {
     display: flex;
-    flex-direction: column;
-    gap: 5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6rem;
 
     .wrapper2_inside {
       padding-top: 1.5em;
-      padding-left: 1.5em;
+      // padding-left: 1.5em;
       padding-bottom: 1.7em;
-      border: solid rgb(75, 89, 72) 1.4px;
+      border: solid rgb(163, 163, 163) 1.4px;
       border-radius: 10%;
+      width: 520px;
     }
   }
 }

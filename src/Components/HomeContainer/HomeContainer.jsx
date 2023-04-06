@@ -1,8 +1,8 @@
-import styles from "./Hero.module.scss";
+import styles from "./HomeContainer.module.scss";
 import CardStructure from "../Cards/CardStructure";
 import data from "../../db/demo.json";
 
-const Hero = () => {
+const HomeContainer = () => {
   return (
     <div className={styles.container}>
       <div className={styles.wrapper1}>
@@ -36,4 +36,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default HomeContainer;
