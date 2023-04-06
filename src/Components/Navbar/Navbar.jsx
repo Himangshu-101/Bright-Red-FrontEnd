@@ -8,6 +8,7 @@ const Navbar = () => {
       </div>
       <div className={styles.right}>
         <button>Login</button>
+        <button>SignUp</button>
         <i className="fa-sharp fa-solid fa-cart-plus"></i>
       </div>
     </div>
