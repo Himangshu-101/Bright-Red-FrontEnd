@@ -1,4 +1,5 @@
 // import { useState } from "react";
+import { Link } from "react-router-dom";
 import CardStructure from "../../Components/Cards/CardStructure";
 import styles from "./Profile.module.scss";
 
@@ -103,7 +104,10 @@ const Profile = () => {
         </div>
       </div>
       <div className={styles.wrapper2}>
-        <p className={styles.addedItems}>Your added items</p>
+        <p className={styles.addedItems}>Uploaded Items</p>
+        <Link className={styles.button1} to="/more">
+          Upload More
+        </Link>
         <div className={styles.wrapper2_box}>
           {added.map((item) => (
             <div className={styles.wrapper2_inside}>

@@ -108,6 +108,33 @@
       }
     }
 
+    .button1 {
+      display: block;
+      margin-top: 0rem;
+      margin-bottom: 3rem;
+      margin-inline: auto;
+      max-width: 10rem;
+      outline: none;
+      border: none;
+      background-color: rgb(139, 138, 138);
+      color: #fff;
+      border: 1px solid whitesmoke;
+      border-radius: 5px;
+      font-weight: 900;
+      font-size: 1rem;
+      padding: 10px 16px;
+      width: 100%;
+      cursor: pointer;
+      transition: 500ms;
+      text-decoration: none;
+      font-family: var(--font-family);
+
+      &:hover {
+        background-color: #884fae;
+        border: 1px solid #9900ff;
+      }
+    }
+
     .wrapper2_box {
       display: flex;
       flex-wrap: wrap;
