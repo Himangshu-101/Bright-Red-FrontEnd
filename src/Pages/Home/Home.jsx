@@ -1,32 +1,19 @@
-import { Button } from "../../Components";
+// import { Button } from "../../Components";
+import Hero from "../../Components/Hero/Hero";
 import { useFetchOnAction } from "../../Hooks";
 
 import style from "./Home.module.scss";
 
 const Home = () => {
-  const [fetchData, fetchFunc] = useFetchOnAction();
+  const [fetchData] = useFetchOnAction();
 
-  const { data, loading, error } = fetchData;
+  const { loading } = fetchData;
 
-  const handleClick = () => {
-    fetchFunc("/db/demo.json");
-  };
+  // const handleClick = () => {
+  //  fetchFunc("/db/demo.json");
+  // };
 
-  return (
-    <main className={style.home}>
-      {loading ? (
-        <h1>Loading...</h1>
-      ) : (
-        <>
-          <h1>Home Page</h1>
-          {error ? <h2 className={style.error}>{error}</h2> : <h2>{data?.msg}</h2>}
-          <Button type="button" onClick={handleClick}>
-            Health Check
-          </Button>
-        </>
-      )}
-    </main>
-  );
+  return <main className={style.home}>{loading ? <h1>Loading...</h1> : <Hero />}</main>;
 };
 
 export default Home;

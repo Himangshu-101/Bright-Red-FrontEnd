@@ -33,9 +33,7 @@ const Footer = () => {
         </div>
 
         <div className={styles.col2}>
-          <h3 style={{ color: "white", fontSize: "4rem" }}>
-            Trash<span>T</span>rade
-          </h3>
+          <h3 style={{ color: "white" }}>Logo</h3>
         </div>
 
         <div className={styles.col3}>
