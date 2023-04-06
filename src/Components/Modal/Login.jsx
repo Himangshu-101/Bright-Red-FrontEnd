@@ -1,6 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { toast } from "react-toastify";
+import { login, reset } from "../../Global/Auth/authSlice";
 import InputControl from "./InputControl";
 import styles from "./Login.module.scss";
 
@@ -14,14 +17,25 @@ const Login = (props) => {
   const [forgot, setForgot] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false);
+  const dispatch = useDispatch();
+  const { user, isError, isSuccess, message } = useSelector((state) => state.auth);
+  useEffect(() => {
+    if (isError) {
+      toast.error(message);
+    }
+    if (isSuccess || user) {
+      setOpenLogin(false);
+    }
+    dispatch(reset());
+  }, [user, dispatch, isError, isSuccess, message, setOpenLogin]);
   const handleSubmission = () => {
     if (!values.email || !values.pass) {
       setErrorMsg("Fill all fields");
       return;
     }
     setErrorMsg("");
-    console.log(values);
     setSubmitButtonDisabled(true);
+    dispatch(login(values));
   };
   const handleClick = () => {
     setOpenLogin(false);

@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
-
+import { ToastContainer } from "react-toastify";
 import { Home, Error, Profile } from "./Pages";
-
+import "react-toastify/dist/ReactToastify.css";
 import { Navbar, Footer } from "./Components";
 
 const App = () => {
@@ -15,6 +15,7 @@ const App = () => {
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
+      <ToastContainer />
     </>
   );
 };

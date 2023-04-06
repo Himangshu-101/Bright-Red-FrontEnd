@@ -1,8 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-import React, { useState } from "react";
-import InputControl from "./InputControl";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { toast } from "react-toastify";
+import { register, reset } from "../../Global/Auth/authSlice";
 import styles from "./SignUp.module.scss";
+import InputControl from "./InputControl";
 const SignUp = (props) => {
   const { setSignup, setOpenLogin } = props;
   const [show, setShow] = useState("show");
@@ -16,6 +19,17 @@ const SignUp = (props) => {
   });
   const [errorMsg, setErrorMsg] = useState("");
   const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false);
+  const dispatch = useDispatch();
+  const { user, isError, isSuccess, message } = useSelector((state) => state.auth);
+  useEffect(() => {
+    if (isError) {
+      toast.error(message);
+    }
+    if (isSuccess || user) {
+      setSignup(false);
+    }
+    dispatch(reset());
+  }, [user, dispatch, isError, isSuccess, message, setSignup]);
 
   const handleSubmission = () => {
     if (
@@ -29,9 +43,9 @@ const SignUp = (props) => {
       setErrorMsg("Fill all fields");
       return;
     }
-    console.log(values);
     setErrorMsg("");
     setSubmitButtonDisabled(true);
+    dispatch(register(values));
   };
   const handleClick = () => {
     setSignup(false);
