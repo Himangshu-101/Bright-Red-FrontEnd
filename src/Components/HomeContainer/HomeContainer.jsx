@@ -1,5 +1,6 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable no-unused-vars */
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
@@ -14,14 +15,16 @@ const HomeContainer = () => {
   const [search, setSearch] = useState("");
   const dispatch = useDispatch();
   const { trash, isError, message } = useSelector((state) => state.trash);
-  // const query = useQuery();
-  // const navigate = useNavigate();
-  // const page = query.get("page") || 1;
-  // const searchQuery = query.get("searchQuery");
+  const query = useQuery();
+  const navigate = useNavigate();
+  const page = query.get("page") || 1;
+  const searchQuery = query.get("searchQuery");
 
   const handleSearch = () => {
     if (search.trim()) {
-      dispatch(searchTrash());
+      dispatch(searchTrash({ search }));
+    } else {
+      navigate("/");
     }
   };
   useEffect(() => {
@@ -55,6 +58,7 @@ const HomeContainer = () => {
             <div className={styles.wrapper2_inside}>
               <CardStructure
                 src={item.pic}
+                id={item._id}
                 name={item.name}
                 location={item.location}
                 compName={item.company}

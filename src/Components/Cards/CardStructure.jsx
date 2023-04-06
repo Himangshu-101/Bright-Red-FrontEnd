@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import { Link } from "react-router-dom";
 import styles from "./CardStructure.module.scss";
 
@@ -28,15 +29,10 @@ const CardStructure = (data) => {
             <b className={styles.price}>Price: {data.price}</b>
           </li>
         </ul>
-        <ul>
-          {/* <li><b className={styles.loc}>Details: </b></li> */}
-          {/* <li>
-            <p>{data.details}</p>
-          </li> */}
-        </ul>
+        <ul></ul>
         <ul>
           <li className={styles.butt}>
-            <Link className={styles.button} to="/">
+            <Link className={styles.button} to={`/trash/${data.id}`}>
               Show More
             </Link>
           </li>
