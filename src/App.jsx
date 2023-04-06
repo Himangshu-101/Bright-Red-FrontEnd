@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { Home, Error, Profile, Details } from "./Pages";
 import "react-toastify/dist/ReactToastify.css";
-import { Navbar, Footer } from "./Components";
+import { Navbar, Footer, More } from "./Components";
 
 const App = () => {
   return (
@@ -14,6 +14,7 @@ const App = () => {
         {/* <Route path="/posts/: id" element={<PostDetails />} /> */}
         <Route path="*" element={<Error />} />
         <Route path="/details" element={<Details />} />
+        <Route path="/more" element={<More />} />
       </Routes>
       <Footer />
       <ToastContainer />
