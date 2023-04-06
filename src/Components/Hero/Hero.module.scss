@@ -1,0 +1,144 @@
+.gpt3__header {
+  display: flex;
+  padding: 2rem 6rem;
+}
+.gpt3__headerContent {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+
+  margin-right: 5rem;
+
+  h1 {
+    font-family: var(--font-family);
+    font-weight: 800;
+    font-size: 62px;
+    line-height: 75px;
+    letter-spacing: -0.04;
+  }
+  p {
+    font-family: var(--font-family);
+    font-weight: normal;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 27px;
+    color: var(--color-text);
+
+    margin-top: 1.5rem;
+  }
+}
+.gpt3__headercontentInput {
+  width: 100%;
+  margin: 2rem 0 1rem;
+  display: flex;
+  input {
+    flex: 2;
+    width: 100%;
+    min-height: 50px;
+    font-family: var(--font-family);
+    font-size: 20px;
+    line-height: 27px;
+    border: 2px solid var(--color-footer);
+    background: var(--color-footer);
+    border-radius: 5px 0px 0px 5px;
+    padding: 0 1rem;
+    outline: none;
+    color: #fff;
+    border-bottom-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  button {
+    flex: 0.6;
+    width: 100%;
+    min-height: 50px;
+    font-family: var(--font-family);
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 27px;
+    background: #ff4820;
+    font-family: var(--font-family);
+    cursor: pointer;
+    outline: none;
+    color: #ffffff;
+    padding: 0 1rem;
+    border: none;
+    border-bottom-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+}
+
+.gpt3__headerContentPeople {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 2rem;
+  img {
+    width: 181px;
+    height: 38px;
+  }
+  p {
+    margin: 0 0 0 1rem;
+    font-family: var(--font-family);
+    margin-left: 1rem;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 38px;
+    color: #fff;
+    text-align: center;
+  }
+}
+.gpt3__headerImage {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .gpt3__header {
+    flex-direction: column;
+  }
+  .gpt3__headerContent {
+    margin: 0 0 3rem;
+  }
+}
+@media screen and (max-width: 760px) {
+  .gpt3__header {
+    padding: 3rem;
+    h1 {
+      font-size: 47px;
+      line-height: 60px;
+      text-align: center;
+    }
+    p {
+      font-size: 16px;
+      line-height: 24px;
+      text-align: center;
+    }
+  }
+  .gpt3__headerContentPeople {
+    flex-direction: column;
+    p {
+      margin: 0;
+    }
+  }
+
+  .gpt3__headerContentInput input,
+  .gpt3__headerContentInput button {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+.gradient__text {
+  background: var(--gradient-text);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
