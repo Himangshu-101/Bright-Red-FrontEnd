@@ -50,8 +50,8 @@
     border-bottom-right-radius: 5px;
   }
   button {
-    flex: 0.6;
-    width: 100%;
+    // flex: 0.6;
+    width: 40%;
     min-height: 50px;
     font-family: var(--font-family);
     font-weight: bold;
@@ -64,8 +64,8 @@
     color: #ffffff;
     padding: 0 1rem;
     border: none;
-    border-bottom-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-radius: 1rem;
+    margin-inline: auto;
   }
 }
 
@@ -111,7 +111,7 @@
 }
 @media screen and (max-width: 760px) {
   .gpt3__header {
-    padding: 3rem;
+    padding: 2rem;
     h1 {
       font-size: 47px;
       line-height: 60px;
