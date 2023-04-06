@@ -32,6 +32,10 @@ const HomeContainer = () => {
           ))}
         </div>
       </div>
+
+      <div className={styles.illust1}>
+        <img src="/images/garbage1.png" alt="Illustration" />
+      </div>
     </div>
   );
 };
