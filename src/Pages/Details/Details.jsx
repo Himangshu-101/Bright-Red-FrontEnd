@@ -17,7 +17,7 @@ const Details = () => {
   }, [dispatch, isError, message, id]);
   return (
     <div className={styles.main}>
-      <h1>Details Section</h1>
+      <h1 className={styles.header}>Details Section</h1>
       <div className={styles.details}>
         <div className={styles.left}>
           <div className={styles.first}>

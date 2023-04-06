@@ -1,5 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { getTrash } from "../../Global/Trash/trashSlice";
 import CardStructure from "../../Components/Cards/CardStructure";
@@ -44,7 +45,10 @@ const Profile = () => {
         </div>
       </div>
       <div className={styles.wrapper2}>
-        <p className={styles.addedItems}>Your added items</p>
+        <p className={styles.addedItems}>Uploaded Items</p>
+        <Link className={styles.button1} to="/more">
+          Upload More
+        </Link>
         <div className={styles.wrapper2_box}>
           {trash
             .filter((item) => item._id !== user.result._id)

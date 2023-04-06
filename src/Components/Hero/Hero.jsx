@@ -5,7 +5,8 @@ const Hero = () => {
     <div className={styles.gpt3__header} id="home">
       <div className={styles.gpt3__headerContent}>
         <h1 className={styles.gradient__text}>
-          Let&apos;s Build Something amazing with GPT-3 OpenAI
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
+          Let&apos;s pave our way to a world where garbage is not 'wasted'...
         </h1>
         <p>
           Yet bed any for travelling assistance indulgence unpleasing. Not thoughts all
