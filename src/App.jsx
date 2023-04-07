@@ -3,7 +3,7 @@ import { ToastContainer } from "react-toastify";
 import { useSelector } from "react-redux";
 import { Home, Profile, Details } from "./Pages";
 import "react-toastify/dist/ReactToastify.css";
-import { Navbar, Footer, More } from "./Components";
+import { Navbar, Footer } from "./Components";
 
 const App = () => {
   const { user } = useSelector((state) => state.auth);
@@ -15,7 +15,6 @@ const App = () => {
         <Route path="/profile" element={user ? <Profile /> : <Navigate to="/" />} />
         <Route path="/trash/:id" element={<Details />} />
         <Route path="*" element={<Navigate to="/" />} />
-        <Route path="/more" element={<More />} />
       </Routes>
       <Footer />
       <ToastContainer />
