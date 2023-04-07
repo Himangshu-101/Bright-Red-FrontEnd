@@ -35,7 +35,7 @@ const More = (props) => {
     dispatch(createTrash(values)).then(() => {
       if (isSuccess) {
         setMore(false);
-        toast.success("");
+        toast.success("item Created");
       }
     });
   };

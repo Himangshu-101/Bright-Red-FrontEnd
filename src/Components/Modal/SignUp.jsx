@@ -27,6 +27,7 @@ const SignUp = (props) => {
     }
     if (isSuccess || user) {
       setSignup(false);
+      toast.success("Account Created");
     }
     dispatch(reset());
   }, [user, dispatch, isError, isSuccess, message, setSignup]);
