@@ -15,7 +15,7 @@ const Hero = () => {
         </p>
         <div className={styles.gpt3__headercontentInput}>
           {/* <input type="email" placeholder="Your Email Address"></input> */}
-          <button type="button">Get Started</button>
+          {/* <button type="button">Get Started</button> */}
         </div>
         <div className={styles.gpt3__headerContentPeople}>
           <img src="/images/people.png" alt="people" />
