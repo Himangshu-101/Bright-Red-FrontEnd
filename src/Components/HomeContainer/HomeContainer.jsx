@@ -1,30 +1,67 @@
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable no-unused-vars */
+import { useLocation, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { toast } from "react-toastify";
+import { getTrash, searchTrash, reset } from "../../Global/Trash/trashSlice";
 import styles from "./HomeContainer.module.scss";
 import CardStructure from "../Cards/CardStructure";
-import data from "../../db/demo.json";
 
+function useQuery() {
+  return new URLSearchParams(useLocation().search);
+}
 const HomeContainer = () => {
+  const [search, setSearch] = useState("");
+  const dispatch = useDispatch();
+  const { trash, isError, message } = useSelector((state) => state.trash);
+  const query = useQuery();
+  const navigate = useNavigate();
+  const page = query.get("page") || 1;
+  const searchQuery = query.get("searchQuery");
+
+  const handleSearch = () => {
+    if (search.trim()) {
+      dispatch(searchTrash({ search }));
+    } else {
+      navigate("/");
+    }
+  };
+  useEffect(() => {
+    dispatch(getTrash());
+    if (isError) {
+      toast.error(message);
+      dispatch(reset());
+    }
+  }, [dispatch, isError, message]);
   return (
     <div className={styles.container}>
       <div className={styles.wrapper1}>
-        {/* <img className={styles.heroImage} src="images/herocoke.jpg" alt="Hero Section Background"></img> */}
         <div className={styles.searchArea}>
-          {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
-          <button type="submit">
+          <button onClick={handleSearch} type="submit" className={styles.button}>
             <i className="fa fa-search"></i>
           </button>
-          <input type="text" placeholder="Search by location..." />
+          <input
+            onChange={(e) => {
+              setSearch(e.target.value);
+            }}
+            type="text"
+            value={search}
+            placeholder="Search by location..."
+          />
         </div>
       </div>
 
       <div className={styles.wrapper2}>
         <div className={styles.wrapper2_box}>
-          {data.map((item) => (
+          {trash.map((item) => (
             <div className={styles.wrapper2_inside}>
               <CardStructure
-                src={item.src}
+                src={item.pic}
+                id={item._id}
                 name={item.name}
                 location={item.location}
-                compName={item.compName}
+                compName={item.company}
                 price={item.price}
                 details={item.details}
               />

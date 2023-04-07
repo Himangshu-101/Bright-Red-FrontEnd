@@ -27,7 +27,7 @@
         font-size: 17px;
         font-family: var(--font-family);
       }
-      button {
+      .button {
         float: right;
         border-radius: 30%;
         padding: 8px 10px;
@@ -116,7 +116,7 @@
     margin: 0;
     padding: 14px;
   }
-  button {
+  .button {
     float: none;
     display: block;
     text-align: left;

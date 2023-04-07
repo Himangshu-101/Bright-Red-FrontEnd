@@ -33,7 +33,7 @@ const Footer = () => {
         </div>
 
         <div className={styles.col2}>
-          <h3 style={{ color: "white" }}>Logo</h3>
+          <img src="/logo/logo (2).png" alt="logo" />
         </div>
 
         <div className={styles.col3}>

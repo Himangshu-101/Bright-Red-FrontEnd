@@ -26,5 +26,22 @@ const getTrash = async () => {
   const response = await axios.get(API_URL);
   return response.data;
 };
-const trashService = { createTrash, getTrash, deleteTrash };
+// get one trash
+const getOneTrash = async (id, token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  const response = await axios.get(`${API_URL}${id}`, config);
+  return response.data;
+};
+/// search Trashhh
+const searchTrash = async (searchQuery) => {
+  const response = await axios.get(
+    `${API_URL}search?searchQuery=${searchQuery.search || "none"}`
+  );
+  return response.data;
+};
+const trashService = { createTrash, getTrash, deleteTrash, searchTrash, getOneTrash };
 export default trashService;
