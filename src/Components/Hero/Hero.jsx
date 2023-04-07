@@ -9,13 +9,13 @@ const Hero = () => {
           Let&apos;s pave our way to a world where garbage is not 'wasted'...
         </h1>
         <p>
-          Yet bed any for travelling assistance indulgence unpleasing. Not thoughts all
-          exercise blessing. Indulgence way everything joy alteration boisterous the
-          attachment. Party we years to order allow asked of.
+          Our website connects industries to exchange waste products, promoting
+          sustainability. Our closed-loop system turns waste materials into valuable
+          resources, encouraging circular economy principles.
         </p>
         <div className={styles.gpt3__headercontentInput}>
           {/* <input type="email" placeholder="Your Email Address"></input> */}
-          <button type="button">Get Started</button>
+          {/* <button type="button">Get Started</button> */}
         </div>
         <div className={styles.gpt3__headerContentPeople}>
           <img src="/images/people.png" alt="people" />

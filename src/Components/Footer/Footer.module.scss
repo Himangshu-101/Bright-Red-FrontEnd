@@ -18,6 +18,13 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 }
+
+.col2 {
+  img {
+    width: 9rem;
+  }
+}
+
 .col1,
 .col2,
 .col3 {
