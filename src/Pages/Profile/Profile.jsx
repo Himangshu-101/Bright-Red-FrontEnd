@@ -1,14 +1,18 @@
 /* eslint-disable no-underscore-dangle */
-import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import CardStructure from "../../Components/Cards/CardStructure";
 import styles from "./Profile.module.scss";
 import { More } from "../../Components";
+import { getTrash } from "../../Global/Trash/trashSlice";
 const Profile = () => {
+  const dispatch = useDispatch();
   const [mo, setMore] = useState(false);
   const { user } = useSelector((state) => state.auth);
   const { trash } = useSelector((state) => state.trash);
-
+  useEffect(() => {
+    dispatch(getTrash());
+  }, [trash, dispatch]);
   return (
     <>
       {mo && <More setMore={setMore} />}
@@ -57,6 +61,7 @@ const Profile = () => {
                     compName={item.compName}
                     price={item.price}
                     details={item.details}
+                    isProfile
                   />
                 </div>
               ))}
