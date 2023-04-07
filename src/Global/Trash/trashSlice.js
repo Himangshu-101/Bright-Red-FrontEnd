@@ -5,6 +5,7 @@ import trashService from "./trashService";
 
 const initialState = {
   trash: [],
+  oneTrash: {},
   isError: false,
   isSuccess: false,
   isLoading: false,
@@ -40,7 +41,20 @@ export const deleteTrash = createAsyncThunk("trash/delete", async (id, thunkAPI)
     return thunkAPI.rejectWithValue(message);
   }
 });
-// gettt all trashh
+// gettt one trashh
+export const getOneTrash = createAsyncThunk("trash/getOne", async (id, thunkAPI) => {
+  try {
+    const { token } = thunkAPI.getState().auth.user;
+    return await trashService.getOneTrash(id, token);
+  } catch (error) {
+    const message =
+      (error.response && error.response.data && error.response.data.message) ||
+      error.message ||
+      error.toString();
+    return thunkAPI.rejectWithValue(message);
+  }
+});
+/// get alll trash
 export const getTrash = createAsyncThunk("trash/getAll", async (thunkAPI) => {
   try {
     return await trashService.getTrash();
@@ -52,6 +66,22 @@ export const getTrash = createAsyncThunk("trash/getAll", async (thunkAPI) => {
     return thunkAPI.rejectWithValue(message);
   }
 });
+// search trash
+export const searchTrash = createAsyncThunk(
+  "trash/search",
+  async (searchQuery, thunkAPI) => {
+    try {
+      return await trashService.searchTrash(searchQuery);
+    } catch (error) {
+      const message =
+        (error.response && error.response.data && error.response.data.message) ||
+        error.message ||
+        error.toString();
+      return thunkAPI.rejectWithValue(message);
+    }
+  }
+);
+
 export const trashSlice = createSlice({
   name: "trash",
   initialState,
@@ -95,6 +125,32 @@ export const trashSlice = createSlice({
         state.trash = state.trash.filter((trash) => trash._id !== action.payload.id);
       })
       .addCase(deleteTrash.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isError = true;
+        state.message = action.payload;
+      })
+      .addCase(searchTrash.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(searchTrash.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.trash = action.payload;
+      })
+      .addCase(searchTrash.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isError = true;
+        state.message = action.payload;
+      })
+      .addCase(getOneTrash.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(getOneTrash.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.oneTrash = action.payload;
+      })
+      .addCase(getOneTrash.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
         state.message = action.payload;

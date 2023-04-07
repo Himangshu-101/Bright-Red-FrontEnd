@@ -22,6 +22,7 @@ const Login = (props) => {
   useEffect(() => {
     if (isError) {
       toast.error(message);
+      setSubmitButtonDisabled(false);
     }
     if (isSuccess || user) {
       setOpenLogin(false);
